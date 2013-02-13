@@ -1,0 +1,49 @@
+GEM
+  specs:
+    capistrano (2.13.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    chunky_png (1.2.7)
+    colored (1.2)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    cri (2.3.0)
+      colored (>= 1.2)
+    fssm (0.2.10)
+    highline (1.6.15)
+    modular-scale (1.0.6)
+      compass (>= 0.12.1)
+      sass (>= 3.2.0)
+      sassy-math (>= 1.5)
+    nanoc (3.5.0)
+      cri (~> 2.2)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.6.3)
+    net-ssh-gateway (1.1.0)
+      net-ssh (>= 1.99.1)
+    rake (10.0.3)
+    sass (3.2.5)
+    sassy-math (1.5)
+      compass (~> 0.11)
+    zurb-foundation (3.2.5)
+      compass (>= 0.12.2)
+      modular-scale (= 1.0.6)
+      rake
+      sass (>= 3.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  capistrano
+  compass
+  nanoc
+  zurb-foundation
