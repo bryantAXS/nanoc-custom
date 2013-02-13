@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'compass'
+
 Compass.add_project_configuration 'config/compass.rb'
 
 # A few helpful tips about the Rules file:
@@ -16,8 +17,21 @@ Compass.add_project_configuration 'config/compass.rb'
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-compile '/assets/styles/sass/*' do
+
+#
+# Compilation Rules
+#
+
+compile '/assets/styles/css/*' do
   filter :sass, Compass.sass_engine_options
+end
+
+# compile '/assets/images/*' do
+#   # dont' filter or layout
+# end
+
+compile '/assets/js/*' do
+  # dont' filter or layout
 end
 
 compile '*' do
@@ -29,8 +43,33 @@ compile '*' do
   end
 end
 
-route '/assets/styles/css/*' do
-  item.identifier.chop + '.css'
+#
+# Layouts
+#
+
+layout '*', :erb
+
+#
+# Routes
+#
+
+route '/assets/styles/sass/*' do
+  item.identifier["sass"] = "css"
+
+  if item.identifier.chop.split('/').last[0] === "_"
+    nil
+  else
+    item.identifier.chop + '.css'
+  end
+
+end
+
+# route '/assets/images/*' do
+#   item.identifier.chop + "." + item[:extension]
+# end
+
+route '/assets/js/*' do
+  item.identifier.gsub(/_/, '.').chomp('/') + "." + item[:extension]
 end
 
 route '*' do
@@ -43,4 +82,3 @@ route '*' do
   end
 end
 
-layout '*', :erb

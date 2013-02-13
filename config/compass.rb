@@ -1,7 +1,9 @@
 # Require any additional compass plugins here.
+require 'zurb-foundation'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
+project_path = "."
 css_dir = "output/assets/styles/css"
 sass_dir = "content/assets/styles/sass"
 images_dir = "content/assets/images"
@@ -22,3 +24,8 @@ javascripts_dir = "content/assets/js"
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+# when using SCSS:
+sass_options = {
+  :syntax => :scss
+}
