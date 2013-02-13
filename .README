@@ -1,0 +1,18 @@
+Steps to install
+
+1. Clone repo
+2. Run <code>$ bundle install</code> (make sure you have Bundler installed first)
+
+Steps to use
+
+1. Inside the root directory of the codebase, run <code>$ nanoc autocompile</code>
+2. Point your browser to http://0.0.0.0:3000, as indicated in the terminal window
+3. Each time you reload the page, all sass assets will be recompiled
+
+Things to note
+
+* You should be adding assets into the content/assets directories
+* All files in the output directory have been compiled, don't add assets into that folder, they could potentially be deleted.
+* Take a look at the <a href="http://nanoc.ws/">nanoc documentation</a>
+
+
