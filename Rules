@@ -23,7 +23,11 @@ Compass.add_project_configuration 'config/compass.rb'
 #
 
 compile '/assets/styles/css/*' do
-  filter :sass, Compass.sass_engine_options
+  if item.identifier.chop.split('/').last[0] === "_"
+    nil
+  else
+    filter :sass, Compass.sass_engine_options
+  end
 end
 
 # compile '/assets/images/*' do
