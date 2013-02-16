@@ -35,7 +35,7 @@ end
 # end
 
 compile '/assets/js/*' do
-  # dont' filter or layout
+  filter :concat_js
 end
 
 compile '*' do
